@@ -1,0 +1,16 @@
+# Compiled binaries and object files
+process_manager
+process_manager.exe
+*.o
+*.obj
+*.out
+*.exe
+
+# Runtime output
+snapshots.txt
+
+# Editor and OS metadata
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
