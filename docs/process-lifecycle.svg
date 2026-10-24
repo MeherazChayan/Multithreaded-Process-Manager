@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300" role="img" aria-labelledby="title desc">
+  <title id="title">Process lifecycle</title><desc id="desc">A process can move between running and blocked, then terminate as a zombie before its parent reaps it.</desc>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker><style>.state{fill:#eff6ff;stroke:#2563eb;stroke-width:2}.terminal{fill:#f8fafc;stroke:#334155;stroke-width:2}.zombie{fill:#fff7ed;stroke:#ea580c;stroke-width:2}.t{font:17px Arial,sans-serif;fill:#0f172a;text-anchor:middle}.s{font:13px Arial,sans-serif;fill:#475569;text-anchor:middle}.l{stroke:#64748b;stroke-width:2;fill:none;marker-end:url(#a)}</style></defs>
+  <rect width="900" height="300" rx="16" fill="#fff"/>
+  <circle class="terminal" cx="45" cy="150" r="12"/><rect class="state" x="145" y="110" width="160" height="80" rx="40"/><text class="t" x="225" y="156">RUNNING</text>
+  <rect class="state" x="385" y="110" width="160" height="80" rx="40"/><text class="t" x="465" y="156">BLOCKED</text>
+  <rect class="zombie" x="625" y="110" width="160" height="80" rx="40"/><text class="t" x="705" y="156">ZOMBIE</text><circle class="terminal" cx="860" cy="150" r="12"/>
+  <path class="l" d="M57 150 H145"/><text class="s" x="100" y="137">fork</text>
+  <path class="l" d="M305 132 H385"/><text class="s" x="345" y="118">wait</text>
+  <path class="l" d="M385 172 H305"/><text class="s" x="345" y="207">wake</text>
+  <path class="l" d="M305 150 C430 42 560 42 650 111"/><text class="s" x="480" y="54">exit or kill</text>
+  <path class="l" d="M545 150 H625"/><text class="s" x="585" y="137">exit or kill</text>
+  <path class="l" d="M785 150 H848"/><text class="s" x="818" y="137">reap</text>
+</svg>

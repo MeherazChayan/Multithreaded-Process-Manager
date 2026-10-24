@@ -1,13 +1,3 @@
-/*
- * Project: Multithreaded Process Manager Simulator
- * Course: CSE321 (Operating Systems Lab)
- * Group ID: 03
- * Section: 19
- * Member 1: Md. Meheraz Hossain Chayan - 22299263
- * Member 2: A.A.M Miad Islam - 22299417
- */
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

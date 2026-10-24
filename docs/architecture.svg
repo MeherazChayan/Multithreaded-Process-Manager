@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="430" viewBox="0 0 960 430" role="img" aria-labelledby="title desc">
+  <title id="title">Multithreaded process manager architecture</title>
+  <desc id="desc">Command files feed worker threads, which use the process manager API and shared process table. State changes enter an event queue consumed by the monitor thread.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker>
+    <style>.box{fill:#f8fafc;stroke:#334155;stroke-width:2}.accent{fill:#eff6ff;stroke:#2563eb;stroke-width:2}.queue{fill:#f0fdf4;stroke:#16a34a;stroke-width:2}.text{font:16px Arial,sans-serif;fill:#0f172a;text-anchor:middle}.small{font:13px Arial,sans-serif;fill:#475569;text-anchor:middle}.line{stroke:#64748b;stroke-width:2;fill:none;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="960" height="430" rx="16" fill="#ffffff"/>
+  <rect class="box" x="35" y="55" width="155" height="55" rx="8"/><text class="text" x="112" y="88">Command file 1</text>
+  <rect class="box" x="35" y="185" width="155" height="55" rx="8"/><text class="text" x="112" y="218">Command file 2</text>
+  <rect class="box" x="35" y="315" width="155" height="55" rx="8"/><text class="text" x="112" y="348">Command file N</text>
+  <rect class="accent" x="245" y="55" width="155" height="55" rx="8"/><text class="text" x="322" y="88">Worker thread 1</text>
+  <rect class="accent" x="245" y="185" width="155" height="55" rx="8"/><text class="text" x="322" y="218">Worker thread 2</text>
+  <rect class="accent" x="245" y="315" width="155" height="55" rx="8"/><text class="text" x="322" y="348">Worker thread N</text>
+  <rect class="accent" x="475" y="150" width="180" height="125" rx="10"/><text class="text" x="565" y="195">Process Manager API</text><text class="small" x="565" y="222">fork · exit · wait</text><text class="small" x="565" y="244">kill · ps</text>
+  <rect class="box" x="735" y="55" width="190" height="70" rx="10"/><text class="text" x="830" y="84">Shared process table</text><text class="small" x="830" y="106">protected by mutex</text>
+  <rect class="queue" x="735" y="180" width="190" height="65" rx="10"/><text class="text" x="830" y="207">Snapshot queue</text><text class="small" x="830" y="229">bounded buffer</text>
+  <rect class="queue" x="735" y="295" width="190" height="55" rx="10"/><text class="text" x="830" y="328">Monitor thread</text>
+  <rect class="box" x="735" y="380" width="190" height="40" rx="8"/><text class="text" x="830" y="406">snapshots.txt</text>
+  <path class="line" d="M190 82 H245"/><path class="line" d="M190 212 H245"/><path class="line" d="M190 342 H245"/>
+  <path class="line" d="M400 82 C445 82 440 175 475 185"/><path class="line" d="M400 212 H475"/><path class="line" d="M400 342 C445 342 440 250 475 240"/>
+  <path class="line" d="M655 185 C690 150 700 90 735 90"/><path class="line" d="M655 230 H735"/><path class="line" d="M830 245 V295"/><path class="line" d="M830 350 V380"/>
+</svg>
